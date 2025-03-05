@@ -72,7 +72,9 @@ document.getElementById("add-cart-btn").addEventListener("click", () => {
     alert("Please Select  Quantity");
   }
 });
-
+let subtotalQuantity = 0;
+let subtotalPrice = 0;
+let subtotal = parseFloat(document.getElementById("subtotal").innerText);
 document.getElementById("checkout-btn").addEventListener("click", () => {
   document.getElementById("cart-modal").classList.remove("hidden");
   const cartContainer = document.getElementById("cart-container");
@@ -83,6 +85,9 @@ document.getElementById("checkout-btn").addEventListener("click", () => {
     const productRow = document.createElement("tr");
 
     productRow.classList.add(`bg-${cartItem.color}-200`, "text-center");
+    let validPrice = parseFloat(cartItem.price.replace("$", ""));
+    subtotal = subtotal + validPrice * cartItem.quantity;
+    document.getElementById("subtotal").innerText = subtotal.toFixed(2);
 
     // product adding with template string
     productRow.innerHTML = `
@@ -103,4 +108,8 @@ document.getElementById("checkout-btn").addEventListener("click", () => {
 });
 document.getElementById("continue-shopping").addEventListener("click", () => {
   document.getElementById("cart-modal").classList.add("hidden");
+});
+
+document.getElementById("pay-btn").addEventListener("click", () => {
+  window.location.href = "final.html";
 });
