@@ -25,7 +25,9 @@
   </head>
   <body class="bg-slate-200 font-poppins">
     <div class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
-      <div class="grid grid-cols-1 md:grid-cols-2 md:items-center gap-6">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 md:items-center gap-6 relative"
+      >
         <!-- Product Image -->
         <div class="flex justify-center">
           <img
@@ -137,22 +139,25 @@
             </button>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- check out btn-->
-    <div class="flex justify-center items-center mt-10 absolute left-2 top-2">
-      <button
-        id="checkout-btn"
-        class="bg-orange-500 text-white py-4 px-5 rounded-lg relative hidden"
-      >
-        <i class="fa-solid fa-bag-shopping text-2xl"></i>
-        <span
-          id="chkout-number"
-          class="px-2 absolute bottom-1 left-3 bg-blue-400 text-whitetext-xs rounded-full"
+
+        <!-- check out btn-->
+        <div
+          class="flex justify-center items-center mt-10 absolute left-0 top-0"
         >
-          0
-        </span>
-      </button>
+          <button
+            id="checkout-btn"
+            class="bg-orange-500 text-white py-4 px-5 rounded-lg relative hidden"
+          >
+            <i class="fa-solid fa-bag-shopping text-2xl"></i>
+            <span
+              id="chkout-number"
+              class="px-2 absolute bottom-1 left-3 bg-blue-400 text-whitetext-xs rounded-full"
+            >
+              0
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Modal for Cart Preview -->
