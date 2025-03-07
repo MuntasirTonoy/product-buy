@@ -1,3 +1,4 @@
+// Color Selection Handling
 const ringButtons = document.querySelectorAll(".ring-button");
 
 for (const ringButton of ringButtons) {
@@ -40,13 +41,25 @@ document.getElementById("minus-btn").addEventListener("click", function () {
   quantityCount(-1);
 });
 
-document.getElementById("add-cart-btn").addEventListener("click", function () {
-  const popUp = document.createElement("p");
-  popUp.innerText = totalItem;
-});
+// ...
 
 document.getElementById("add-cart-btn").addEventListener("click", () => {
   if (totalItem !== 0) {
+    // Check if color is selected
+    const colorSelected = document.querySelector(".ring-red-700.ring-button");
+    if (!colorSelected) {
+      alert("Please Select Color");
+      return;
+    }
+
+    // Check if size is selected
+    const sizeSelected = document.querySelector("button.ring-2");
+    if (!sizeSelected) {
+      alert("Please Select Size");
+      return;
+    }
+
+    // Only proceed if all validations pass
     document.getElementById("checkout-btn").classList.remove("hidden");
     document.getElementById("chkout-number").innerText =
       parseInt(document.getElementById("chkout-number").innerText) + totalItem;
@@ -69,9 +82,10 @@ document.getElementById("add-cart-btn").addEventListener("click", () => {
       quantity: selectedQuantity,
     });
   } else {
-    alert("Please Select  Quantity");
+    alert("Please Select Quantity");
   }
 });
+
 let subtotalQuantity = 0;
 let subtotalPrice = 0;
 let subtotal = parseFloat(document.getElementById("subtotal").innerText);
@@ -106,6 +120,7 @@ document.getElementById("checkout-btn").addEventListener("click", () => {
   }
   cartItems = [];
 });
+// Modal Controls
 document.getElementById("continue-shopping").addEventListener("click", () => {
   document.getElementById("cart-modal").classList.add("hidden");
 });

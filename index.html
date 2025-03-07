@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- tailwind cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- fontawesome-->
+    <script
+      src="https://kit.fontawesome.com/6f086dc852.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -135,15 +140,15 @@
       </div>
     </div>
     <!-- check out btn-->
-    <div class="flex justify-center items-center mt-10">
+    <div class="flex justify-center items-center mt-10 absolute left-2 top-2">
       <button
         id="checkout-btn"
-        class="hidden bg-orange-500 text-white text-xl p-5 rounded-lg"
+        class="bg-orange-500 text-white py-4 px-5 rounded-lg relative hidden"
       >
-        Check Out
+        <i class="fa-solid fa-bag-shopping text-2xl"></i>
         <span
           id="chkout-number"
-          class="px-4 py-1 bg-white text-black rounded-full"
+          class="px-2 absolute bottom-1 left-3 bg-blue-400 text-whitetext-xs rounded-full"
         >
           0
         </span>
